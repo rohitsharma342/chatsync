@@ -1,0 +1,201 @@
+import '../models/user_model.dart';
+import '../models/group_model.dart';
+import '../models/message_model.dart';
+
+class StaticData {
+  static final List<UserModel> users = [
+    UserModel(
+      id: 'user1',
+      name: 'John Smith',
+      email: 'john.smith@company.com',
+      phoneNumber: '+1234567890',
+      isAdmin: true,
+      createdAt: DateTime.now().subtract(const Duration(days: 30)),
+    ),
+    UserModel(
+      id: 'user2',
+      name: 'Sarah Johnson',
+      email: 'sarah.johnson@company.com',
+      phoneNumber: '+1987654321',
+      isAdmin: false,
+      createdAt: DateTime.now().subtract(const Duration(days: 25)),
+    ),
+    UserModel(
+      id: 'user3',
+      name: 'Mike Chen',
+      email: 'mike.chen@company.com',
+      phoneNumber: '+1122334455',
+      isAdmin: false,
+      createdAt: DateTime.now().subtract(const Duration(days: 20)),
+    ),
+    UserModel(
+      id: 'user4',
+      name: 'Emily Davis',
+      email: 'emily.davis@company.com',
+      phoneNumber: '+1555666777',
+      isAdmin: false,
+      createdAt: DateTime.now().subtract(const Duration(days: 15)),
+    ),
+    UserModel(
+      id: 'user5',
+      name: 'Alex Turner',
+      email: 'alex.turner@company.com',
+      phoneNumber: '+1888999000',
+      isAdmin: false,
+      createdAt: DateTime.now().subtract(const Duration(days: 10)),
+    ),
+    UserModel(
+      id: 'user6',
+      name: 'Jessica Brown',
+      email: 'jessica.brown@company.com',
+      phoneNumber: '+1444555666',
+      isAdmin: false,
+      createdAt: DateTime.now().subtract(const Duration(days: 5)),
+    ),
+  ];
+
+  static final List<GroupModel> groups = [
+    GroupModel(
+      id: 'group1',
+      name: 'Engineering Team',
+      tags: ['Engineering', 'Development'],
+      memberIds: ['user1', 'user2', 'user3'],
+      createdBy: 'user1',
+      createdAt: DateTime.now().subtract(const Duration(days: 20)),
+      lastMessage: 'Let us discuss the new feature implementation',
+      lastMessageTime: DateTime.now().subtract(const Duration(minutes: 30)),
+    ),
+    GroupModel(
+      id: 'group2',
+      name: 'Marketing Squad',
+      tags: ['Marketing', 'Creative'],
+      memberIds: ['user1', 'user4', 'user5'],
+      createdBy: 'user4',
+      createdAt: DateTime.now().subtract(const Duration(days: 15)),
+      lastMessage: 'Campaign launch is scheduled for Monday',
+      lastMessageTime: DateTime.now().subtract(const Duration(hours: 2)),
+    ),
+    GroupModel(
+      id: 'group3',
+      name: 'Project Alpha',
+      tags: ['Project', 'Priority'],
+      memberIds: ['user1', 'user2', 'user4', 'user6'],
+      createdBy: 'user1',
+      createdAt: DateTime.now().subtract(const Duration(days: 10)),
+      lastMessage: 'Sprint review meeting tomorrow at 10 AM',
+      lastMessageTime: DateTime.now().subtract(const Duration(hours: 5)),
+    ),
+    GroupModel(
+      id: 'group4',
+      name: 'HR Announcements',
+      tags: ['HR', 'Announcements'],
+      memberIds: ['user1', 'user2', 'user3', 'user4', 'user5', 'user6'],
+      createdBy: 'user1',
+      createdAt: DateTime.now().subtract(const Duration(days: 25)),
+      lastMessage: 'New company policy update attached',
+      lastMessageTime: DateTime.now().subtract(const Duration(days: 1)),
+    ),
+    GroupModel(
+      id: 'group5',
+      name: 'Design Studio',
+      tags: ['Design', 'Creative'],
+      memberIds: ['user3', 'user5', 'user6'],
+      createdBy: 'user5',
+      createdAt: DateTime.now().subtract(const Duration(days: 8)),
+      lastMessage: 'New mockups are ready for review',
+      lastMessageTime: DateTime.now().subtract(const Duration(hours: 8)),
+    ),
+  ];
+
+  static final List<MessageModel> messages = [
+    MessageModel(
+      id: 'msg1',
+      groupId: 'group1',
+      senderId: 'user1',
+      senderName: 'John Smith',
+      content: 'Hey team! How is everyone doing today?',
+      timestamp: DateTime.now().subtract(const Duration(hours: 3)),
+    ),
+    MessageModel(
+      id: 'msg2',
+      groupId: 'group1',
+      senderId: 'user2',
+      senderName: 'Sarah Johnson',
+      content: 'Doing great! Just finished the code review.',
+      timestamp: DateTime.now().subtract(const Duration(hours: 2, minutes: 45)),
+    ),
+    MessageModel(
+      id: 'msg3',
+      groupId: 'group1',
+      senderId: 'user3',
+      senderName: 'Mike Chen',
+      content: 'I have pushed the new updates to the staging branch.',
+      timestamp: DateTime.now().subtract(const Duration(hours: 2, minutes: 30)),
+    ),
+    MessageModel(
+      id: 'msg4',
+      groupId: 'group1',
+      senderId: 'user1',
+      senderName: 'John Smith',
+      content: 'Perfect! Let us discuss the new feature implementation.',
+      timestamp: DateTime.now().subtract(const Duration(minutes: 30)),
+    ),
+    MessageModel(
+      id: 'msg5',
+      groupId: 'group2',
+      senderId: 'user4',
+      senderName: 'Emily Davis',
+      content: 'The new marketing materials are ready!',
+      timestamp: DateTime.now().subtract(const Duration(hours: 5)),
+    ),
+    MessageModel(
+      id: 'msg6',
+      groupId: 'group2',
+      senderId: 'user5',
+      senderName: 'Alex Turner',
+      content: 'Great work Emily! I will share with the stakeholders.',
+      timestamp: DateTime.now().subtract(const Duration(hours: 4)),
+    ),
+    MessageModel(
+      id: 'msg7',
+      groupId: 'group2',
+      senderId: 'user1',
+      senderName: 'John Smith',
+      content: 'Campaign launch is scheduled for Monday.',
+      timestamp: DateTime.now().subtract(const Duration(hours: 2)),
+    ),
+    MessageModel(
+      id: 'msg8',
+      groupId: 'group3',
+      senderId: 'user2',
+      senderName: 'Sarah Johnson',
+      content: 'Project timeline has been updated.',
+      timestamp: DateTime.now().subtract(const Duration(hours: 10)),
+    ),
+    MessageModel(
+      id: 'msg9',
+      groupId: 'group3',
+      senderId: 'user6',
+      senderName: 'Jessica Brown',
+      content: 'Sprint review meeting tomorrow at 10 AM.',
+      timestamp: DateTime.now().subtract(const Duration(hours: 5)),
+    ),
+  ];
+
+  static final List<String> availableTags = [
+    'Engineering',
+    'Development',
+    'Marketing',
+    'Creative',
+    'Project',
+    'Priority',
+    'HR',
+    'Announcements',
+    'Design',
+    'Sales',
+    'Support',
+    'Finance',
+  ];
+
+  static int notificationCount = 5;
+}
